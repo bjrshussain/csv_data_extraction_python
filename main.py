@@ -76,6 +76,8 @@ def main():
     def sorting_key(x):
         return x.id
     all_objects.sort(key=sorting_key)
+    
+#     EXPORT A CSV WITH ALL THE EMPLOYEES WITH DETAILS
     with open("details.csv", "w") as file:
         writer = csv.writer(file)
         for each in all_objects:
