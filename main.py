@@ -75,6 +75,7 @@ def main():
 # EXPORT SECTION
     def sorting_key(x):
         return x.id
+        
     all_objects.sort(key=sorting_key)
     with open("details.csv", "w") as file:
         writer = csv.writer(file)
@@ -101,8 +102,10 @@ def main():
 
     city_list = []
     for each in all_objects:
-        employer_list.append(each.city)
-    city_list = list(set(employer_list))
+        city_list.append(each.city)
+        
+    city_list = list(set(city_list))
+    print("CITIES", city_list)
 
     # EXPORT A CSV FILE BASED ON CITY
     for each in city_list:
